@@ -1,0 +1,50 @@
+{
+  "name": "youtube-playlist-sort",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:vite": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.ts",
+    "format": "prettier --write src",
+    "backup": "git add . && git commit -m \"chore: backup\" && git push",
+    "up": "npx npm-check-updates -u"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.2",
+    "vue": "^3.2.33"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "@vitejs/plugin-vue": "^2.3.2",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "less": "^4.1.2",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.8",
+    "vite-plugin-banner": "^0.2.0",
+    "vue-tsc": "^0.34.11",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged --concurrent false"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
